@@ -1,19 +1,19 @@
 import { useState } from "react";
 import AuthForm from "../components/AuthForm";
 
-export default function Login() {
+export default function Register() {
     const [email, setEmail] = useState("");
+    const [name, setName] = useState("");
     const [password, setPassword] = useState("");
+    const [repeatPassword, setRepeatPassword] = useState("");
+
     const submit = (e) => {
         e.preventDefault();
-        console.log(email, password);
-        setEmail("");
-        setPassword("");
     };
     return (
         <div className="w-screen h-screen overflow-hidden bg-blue-400 flex justify-center items-center">
             <AuthForm
-                name="Login"
+                name="Register"
                 inputs={[
                     {
                         name: "Email",
@@ -22,16 +22,28 @@ export default function Login() {
                         changeValue: (e) => setEmail(e.target.value),
                     },
                     {
+                        name: "Name",
+                        type: "text",
+                        value: name,
+                        changeValue: (e) => setName(e.target.value),
+                    },
+                    {
                         name: "Password",
                         type: "password",
                         value: password,
                         changeValue: (e) => setPassword(e.target.value),
                     },
+                    {
+                        name: "Repeat Password",
+                        type: "password",
+                        value: repeatPassword,
+                        changeValue: (e) => setRepeatPassword(e.target.value),
+                    },
                 ]}
                 alternative={{
-                    text: "Don't have an account?",
-                    link: "/register",
-                    linkText: "Sign up here",
+                    text: "Already have an account?",
+                    link: "/login",
+                    linkText: "Login here",
                 }}
                 onSubmit={submit}
             />
