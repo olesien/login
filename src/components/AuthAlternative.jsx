@@ -5,7 +5,7 @@ export default function AuthAlternative({ alternative }) {
     return (
         <p>
             <span>{text}</span>
-            <Link className="pl-2 text-blue-500" to={link}>
+            <Link className="pl-2 text-blue-500 hover:text-blue-600" to={link}>
                 {linkText}
             </Link>
         </p>

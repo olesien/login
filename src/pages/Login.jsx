@@ -11,7 +11,7 @@ export default function Login() {
         setPassword("");
     };
     return (
-        <div className="w-screen h-screen overflow-hidden bg-blue-400 flex justify-center items-center">
+        <div className="w-screen h-screen overflow-hidden flex justify-center items-center gradient-background">
             <AuthForm
                 name="Login"
                 inputs={[
