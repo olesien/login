@@ -1,15 +1,36 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AuthForm from "../components/AuthForm";
+import { useRegister } from "../hooks/reqresAPI";
 
-export default function Register() {
+export default function Register({ updateUser }) {
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const [repeatPassword, setRepeatPassword] = useState("");
+    const mutation = useRegister();
+
+    const { error, data: user } = mutation;
 
     const submit = (e) => {
         e.preventDefault();
+        mutation.mutate({ email, password });
+        setEmail("");
+        setName("");
+        setPassword("");
+        setRepeatPassword("");
     };
+    useEffect(() => {
+        if (user) {
+            console.log("Storing item!");
+            console.log(user);
+            localStorage.setItem(
+                "login-user-token",
+                JSON.stringify(user.data.token)
+            );
+            updateUser(user);
+        }
+    }, [updateUser, user]);
+    console.log(user);
     return (
         <div className="w-screen h-screen overflow-hidden bg-blue-400 flex justify-center items-center gradient-background">
             <AuthForm
@@ -46,6 +67,7 @@ export default function Register() {
                     linkText: "Login here",
                 }}
                 onSubmit={submit}
+                error={error}
             />
         </div>
     );
