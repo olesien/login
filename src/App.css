@@ -41,3 +41,18 @@
     background: linear-gradient(0.3turn, #27d943, #5f82fe);
     opacity: 0.85;
 }
+
+td,
+th {
+    padding: 0;
+}
+
+table tr td:first-child div,
+table tr th:first-child div {
+    border-radius: 1rem 0 0 1rem;
+}
+
+table tr td:nth-child(4) div,
+table tr th:nth-child(4) div {
+    border-radius: 0 1rem 1rem 0;
+}
