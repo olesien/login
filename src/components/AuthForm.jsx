@@ -28,6 +28,7 @@ export default function AuthForm({
                             type={input.type}
                             value={input.value}
                             changeValue={input.changeValue}
+                            error={input.error}
                         />
                     ))}
                 </div>
