@@ -13,6 +13,35 @@ export default function Register({ updateUser }) {
     const { error, data: user } = mutation;
     const validateInput = () => {
         let errCount = 0;
+
+        //password repeat
+        if (password !== repeatPassword) {
+            setInputErr({
+                name: "Repeat Password",
+                details: "The passwords don't match!",
+            });
+            errCount++;
+        }
+
+        //password
+        if (password.length < 4) {
+            setInputErr({
+                name: "Password",
+                details: "Password is too short! (min 4)",
+            });
+            errCount++;
+        }
+
+        //name
+        if (name.length < 4) {
+            setInputErr({
+                name: "Name",
+                details: "Name is too short! (min 4)",
+            });
+            errCount++;
+        }
+
+        //mail
         const emailRegex =
             /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
         if (email.length < 4) {
@@ -22,14 +51,6 @@ export default function Register({ updateUser }) {
             setInputErr({ name: "Email", details: "This email is invalid!" });
             errCount++;
         }
-
-        // if (email.length < 4) {
-        //     setInputErr({ name: "Email", details: "Email is too short!" });
-        //     errCount++;
-        // } else if (email.length < 4) {
-        //     setInputErr({ name: "Email", details: "Email is too short!" });
-        //     errCount++;
-        // }
 
         if (errCount > 0) {
             return false;
