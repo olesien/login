@@ -6,14 +6,14 @@ export default function AuthInput({ name, type, value, changeValue, error }) {
             <div className="flex items-center">
                 <div className="flex-1">
                     <label
-                        className="block text-xl text-left p-4 text-slate-600"
+                        className="block text-left p-4 text-slate-600 text-l md:text-xl"
                         htmlFor={name}
                     >
                         {name}
                     </label>
                 </div>
                 <div className="flex-1 text-red-500">
-                    <label htmlFor={name}>
+                    <label className="text-sm md:text-base" htmlFor={name}>
                         {error && error.name === name && error.details}
                     </label>
                 </div>

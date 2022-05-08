@@ -77,7 +77,7 @@ export default function RenderTable({ tableInstance }) {
                                             >
                                                 {
                                                     // Render the cell contents
-                                                    <div className="bg-slate-50 px-1 py-1 h-16 text-sm md:px-8 md:py-4 md:text-bas md:h-24 flex justify-center items-center">
+                                                    <div className="bg-slate-50 px-1 py-1 h-16 text-sm md:px-8 md:py-4 md:text-base md:h-24 flex justify-center items-center">
                                                         {cell.render("Cell")}
                                                     </div>
                                                 }

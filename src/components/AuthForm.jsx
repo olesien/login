@@ -20,7 +20,7 @@ export default function AuthForm({
             )}
             <form className="p-6" onSubmit={onSubmit}>
                 <AuthTitle title={name} />
-                <div className="inputs my-12">
+                <div className="inputs my-6 md:my-12">
                     {inputs.map((input, index) => (
                         <AuthInput
                             key={index}
