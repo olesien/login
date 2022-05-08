@@ -1,5 +1,6 @@
 import React from "react";
 
+//Component used to render a table (this is done using React Table)
 export default function RenderTable({ tableInstance }) {
     const {
         getTableProps,

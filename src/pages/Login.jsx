@@ -31,6 +31,7 @@ export default function Login({ updateUser }) {
             errCount++;
         }
 
+        //If there are more than 0 errors, prevent form from being sent
         if (errCount > 0) {
             return false;
         }
@@ -47,6 +48,7 @@ export default function Login({ updateUser }) {
         }
     };
 
+    //When changes to user prop are detected, update the local storage.
     useEffect(() => {
         if (user) {
             localStorage.setItem(

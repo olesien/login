@@ -78,6 +78,7 @@ export default function Home({ updateUser }) {
 
     if (error) return "An error has occurred: " + error.message;
 
+    //Log the user out and clear the local storage
     const logout = () => {
         localStorage.setItem("login-user-token", JSON.stringify(undefined));
         updateUser();
@@ -86,9 +87,6 @@ export default function Home({ updateUser }) {
     return (
         <div>
             <Navbar logout={logout} />
-            {/* {data.data.map((user) => (
-                <RenderUser user={user} />
-            ))} */}
             <div className="flex justify-center mt-8">
                 <RenderTable tableInstance={tableInstance} />
             </div>

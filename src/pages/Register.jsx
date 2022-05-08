@@ -52,6 +52,7 @@ export default function Register({ updateUser }) {
             errCount++;
         }
 
+        //If there are more than 0 errors, prevent form from being sent
         if (errCount > 0) {
             return false;
         }
@@ -69,6 +70,8 @@ export default function Register({ updateUser }) {
             setInputErr({ name: "", details: "" });
         }
     };
+
+    //When changes to user prop are detected, update the local storage.
     useEffect(() => {
         if (user) {
             localStorage.setItem(
