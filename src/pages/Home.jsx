@@ -41,7 +41,7 @@ export default function Home({ updateUser }) {
                 Cell: (tableProps) => (
                     <div>
                         <img
-                            className="w-16 h-auto rounded-md"
+                            className="w-12 md:w-16 h-auto rounded-md"
                             src={tableProps.row.original.avatar}
                             alt="Avatar"
                         />
@@ -83,7 +83,6 @@ export default function Home({ updateUser }) {
         updateUser();
     };
 
-    //console.log(data);
     return (
         <div>
             <Navbar logout={logout} />
@@ -94,16 +93,5 @@ export default function Home({ updateUser }) {
                 <RenderTable tableInstance={tableInstance} />
             </div>
         </div>
-    );
-}
-
-function RenderUser({ user }) {
-    return (
-        <>
-            <h1>{user.email}</h1>
-            <p>{user.first_name}</p>
-            <p>{user.last_name}</p>
-            <img src={user.avatar} alt="avatar!" />
-        </>
     );
 }

@@ -49,8 +49,6 @@ export default function Login({ updateUser }) {
 
     useEffect(() => {
         if (user) {
-            console.log("Storing item!");
-            console.log(user);
             localStorage.setItem(
                 "login-user-token",
                 JSON.stringify(user.data.token)
@@ -58,7 +56,6 @@ export default function Login({ updateUser }) {
             updateUser(user);
         }
     }, [updateUser, user]);
-    console.log(user);
     return (
         <div className="w-screen h-screen overflow-hidden flex justify-center items-center gradient-background">
             {/* {isLoading && <p>Loading</p>} */}

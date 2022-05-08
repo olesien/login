@@ -32,13 +32,13 @@ export default function RenderTable({ tableInstance }) {
                                     // Apply the header cell props
 
                                     <th
-                                        className="py-4"
+                                        className="py-2 md:py-4"
                                         {...column.getHeaderProps()}
                                     >
                                         {
                                             // Render the header
 
-                                            <div className="bg-slate-50 text-slate-600 px-8 py-4">
+                                            <div className="bg-slate-50 text-slate-600 px-2 py-1 text-xs md:px-8 md:py-4 md:text-base">
                                                 {column.render("Header")}
                                             </div>
                                         }
@@ -70,15 +70,14 @@ export default function RenderTable({ tableInstance }) {
 
                                     row.cells.map((cell) => {
                                         // Apply the cell props
-                                        console.log(cell);
                                         return (
                                             <td
-                                                className="py-4"
+                                                className="py-2 md:py-4"
                                                 {...cell.getCellProps()}
                                             >
                                                 {
                                                     // Render the cell contents
-                                                    <div className="bg-slate-50  px-8 py-4 h-24 flex justify-center items-center">
+                                                    <div className="bg-slate-50 px-1 py-1 h-16 text-sm md:px-8 md:py-4 md:text-bas md:h-24 flex justify-center items-center">
                                                         {cell.render("Cell")}
                                                     </div>
                                                 }

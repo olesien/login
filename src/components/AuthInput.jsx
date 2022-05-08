@@ -1,8 +1,6 @@
 import React from "react";
 
 export default function AuthInput({ name, type, value, changeValue, error }) {
-    console.log(error);
-    console.log(name);
     return (
         <div>
             <div className="flex items-center">
@@ -22,7 +20,7 @@ export default function AuthInput({ name, type, value, changeValue, error }) {
             </div>
 
             <input
-                className="w-96 p-2 border-b-2 border-slate-600 "
+                className="w-80 md:w-96 p-2 border-b-2 border-slate-600 "
                 type={type}
                 name={name}
                 value={value}

@@ -71,8 +71,6 @@ export default function Register({ updateUser }) {
     };
     useEffect(() => {
         if (user) {
-            console.log("Storing item!");
-            console.log(user);
             localStorage.setItem(
                 "login-user-token",
                 JSON.stringify(user.data.token)
@@ -80,7 +78,6 @@ export default function Register({ updateUser }) {
             updateUser(user);
         }
     }, [updateUser, user]);
-    console.log(user);
     return (
         <div className="w-screen h-screen overflow-hidden bg-blue-400 flex justify-center items-center gradient-background">
             <AuthForm
