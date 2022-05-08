@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Login react app using reqres API
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was made with react, along with tailwind, react router, react table & react query.
 
 ## Available Scripts
 
